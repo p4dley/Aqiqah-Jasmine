@@ -1,27 +1,83 @@
-.simply-countdown {
-  overflow: hidden;
-  display: table;
-  margin: auto;
-}
-.simply-countdown > .simply-section {
-  width: 50px;
-  height: 50px;
-  padding: 80px;
+.countdown {
+  margin-bottom: 40px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  float: left;
-  margin: 10px;
-  background: var(--pink);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 50%;
+  flex-direction: row;
+  justify-content: flex-start;
 }
-.simply-countdown > .simply-section .simply-amount,
-.simply-countdown > .simply-section .simply-word {
-  display: block;
+@media only screen and (max-width: 1024px) {
+  .countdown {
+    justify-content: center;
+  }
+}
+.countdown .time {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.countdown .time:not(:last-child) {
+  margin-right: 16px;
+}
+.countdown .time #days,
+.countdown .time #hours,
+.countdown .time #minutes,
+.countdown .time #seconds,
+.countdown .time .semicolon {
+  font-family: Samsung Sharp Sans;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+@media only screen and (min-width: 1024px) {
+  .countdown .time #days,
+  .countdown .time #hours,
+  .countdown .time #minutes,
+  .countdown .time #seconds,
+  .countdown .time .semicolon {
+    font-size: 72px;
+    line-height: 91px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .countdown .time #days,
+  .countdown .time #hours,
+  .countdown .time #minutes,
+  .countdown .time #seconds,
+  .countdown .time .semicolon {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+.countdown .time span {
+  font-family: Samsung Sharp Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
   text-align: center;
+  letter-spacing: 0.3px;
+  align-self: center;
 }
-
-.simply-countdown > .simply-section .simply-amount {
-  font-size: 1.6rem;
+.countdown .semicolon {
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: Samsung Sharp Sans;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+@media only screen and (min-width: 1024px) {
+  .countdown .semicolon {
+    font-size: 72px;
+    line-height: 91px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .countdown .semicolon {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
 }
